@@ -22,12 +22,12 @@
 
 ```mermaid
 graph LR
-    A[Client / AI Agent] --> B[GET /invoice/{id}/pay]
-    B --> C[HTTP 402 + x402 instructions]
-    C --> D[X-PAYMENT header with EIP-712 signature]
-    D --> E[Facilitator settles on Sei]
-    E --> F[Invoice marked as Paid]
-    F --> G[UI updates immediately]
+    A["Client / AI Agent"] --> B["GET /invoice/pay"]
+    B --> C["HTTP 402 + x402 instructions"]
+    C --> D["X-PAYMENT header with EIP-712 signature"]
+    D --> E["Facilitator settles on Sei"]
+    E --> F["Invoice marked as Paid"]
+    F --> G["UI updates immediately"]
     
     style A fill:#e1f5fe
     style G fill:#c8e6c9
