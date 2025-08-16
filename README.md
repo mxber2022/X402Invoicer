@@ -1,20 +1,25 @@
 # X402Invoicer — HTTP-Native Invoice Payments on Sei
 
-**X402Invoicer** enables seamless invoice payments over a **single HTTP flow**, leveraging the x402 micro-payment standard and the blazing-fast **Sei blockchain**.
+> **Seamless invoice payments over a single HTTP flow**  
+> Leveraging the x402 micro-payment standard and the blazing-fast **Sei blockchain**
 
 ---
 
-## 🚀 Highlights
+## 🚀 Key Features
 
-- **x402 Payments**: Clients hit a "pay" endpoint and either receive an invoice or are prompted to pay using HTTP 402. Payments are embedded in the `X-PAYMENT` header—no wallet UI needed.
-  > :contentReference[oaicite:3]{index=3}
+### 💳 **x402 Payments**
+Clients hit a "pay" endpoint and either receive an invoice or are prompted to pay using HTTP 402. Payments are embedded in the `X-PAYMENT` header—no wallet UI needed.
+> :contentReference[oaicite:3]{index=3}
 
-- **On-chain Settlement**: All payments settle as native USDC on Sei, a performant EVM-compatible L1.
-  > :contentReference[oaicite:4]{index=4}
+### ⛓️ **On-chain Settlement**
+All payments settle as native USDC on Sei, a performant EVM-compatible L1.
+> :contentReference[oaicite:4]{index=4}
 
-- **Automated Invoice Processing**: Invoices are instantly updated to "Paid" after a successful on-chain settlement.
+### ⚡ **Automated Processing**
+Invoices are instantly updated to "Paid" after successful on-chain settlement.
 
-- **Agent-Ready**: Fully compatible with AI agent workflows—ideal for autonomous systems.
+### 🤖 **Agent-Ready**
+Fully compatible with AI agent workflows—ideal for autonomous systems.
 
 ---
 
@@ -33,39 +38,42 @@ graph LR
     style G fill:#c8e6c9
 ```
 
-**Flow Details:**
-1. **Request**: Client/Agent hits `GET /invoice/{id}/pay`
-2. **Response**: Server responds with HTTP 402 + x402 instructions
-3. **Payment**: Client retries with `X-PAYMENT` header (EIP-712 signed)
-4. **Settlement**: Facilitator settles payment on Sei in native USDC
-5. **Validation**: Invoice Server validates settlement → marks invoice Paid
-6. **Update**: UI updates immediately
+### 🔄 **Payment Flow Details**
+
+| Step | Action | Description |
+|------|--------|-------------|
+| **1** | **Request** | Client/Agent hits `GET /invoice/{id}/pay` |
+| **2** | **Response** | Server responds with HTTP 402 + x402 instructions |
+| **3** | **Payment** | Client retries with `X-PAYMENT` header (EIP-712 signed) |
+| **4** | **Settlement** | Facilitator settles payment on Sei in native USDC |
+| **5** | **Validation** | Invoice Server validates settlement → marks invoice Paid |
+| **6** | **Update** | UI updates immediately |
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Technology Stack
 
-| Component | Technology |
-|-----------|------------|
-| **Backend** | Node.js / Express or NestJS + `x402-express` middleware |
-| **Blockchain** | Sei L1 (EVM-compatible) with native USDC support |
-| **Storage** | PostgreSQL (invoices), Redis (queue tracking) |
-| **Dashboard** | Next.js or similar frontend |
-| **x402 Handling** | `x402-express` for seamless middleware integration |
-| **Payment Settlement** | Facilitator (e.g. Coinbase's or custom) |
-| **Payments** | Managed directly over HTTP with EIP-712 signed headers |
+| **Component** | **Technology** | **Purpose** |
+|---------------|----------------|-------------|
+| **Backend** | Node.js / Express or NestJS + `x402-express` middleware | API server with x402 integration |
+| **Blockchain** | Sei L1 (EVM-compatible) with native USDC support | Payment settlement layer |
+| **Storage** | PostgreSQL (invoices), Redis (queue tracking) | Data persistence & caching |
+| **Dashboard** | Next.js or similar frontend | User interface |
+| **x402 Handling** | `x402-express` for seamless middleware integration | Payment processing |
+| **Payment Settlement** | Facilitator (e.g. Coinbase's or custom) | On-chain transaction execution |
+| **Payments** | Managed directly over HTTP with EIP-712 signed headers | Secure payment flow |
 
 ---
 
-## ⚡ Quick Start
+## ⚡ Quick Start Guide
 
-### Prerequisites
-- Node.js 18+ 
-- PostgreSQL
-- Redis
-- Sei wallet with USDC
+### 📋 **Prerequisites**
+- **Node.js** 18+ 
+- **PostgreSQL** database
+- **Redis** cache server
+- **Sei wallet** with USDC balance
 
-### Installation
+### 🔧 **Installation**
 
 ```bash
 # Clone the repository
@@ -79,7 +87,7 @@ npm install
 cp .env.example .env
 ```
 
-### Environment Configuration
+### ⚙️ **Environment Configuration**
 
 ```bash
 # Required environment variables
@@ -89,7 +97,7 @@ DATABASE_URL=postgresql://user:pass@localhost:5432/x402invoicer
 REDIS_URL=redis://localhost:6379
 ```
 
-### Running the Application
+### 🚀 **Running the Application**
 
 ```bash
 # Development mode
@@ -102,18 +110,18 @@ npm start
 
 ---
 
-## 🎯 Demo Flow
+## 🎯 Demo Workflow
 
-### 1. Invoice Creation
+### **Step 1: Invoice Creation**
 Seller creates invoice through the dashboard interface.
 
-### 2. Payment Request
+### **Step 2: Payment Request**
 Agent hits `GET /invoice/{id}/pay` → receives HTTP 402 + payment details.
 
-### 3. Payment Processing
+### **Step 3: Payment Processing**
 Agent processes payment via `X-PAYMENT` header with proper EIP-712 signature.
 
-### 4. Settlement Confirmation
+### **Step 4: Settlement Confirmation**
 Invoice status updates to "Paid" instantly upon on-chain confirmation.
 
 ---
@@ -124,4 +132,4 @@ Invoice status updates to "Paid" instantly upon on-chain confirmation.
 
 ---
 
-> **X402Invoicer** — Where HTTP meets seamless on-chain payment logic on Sei. ⚡
+> **X402Invoicer** — Where HTTP meets seamless on-chain payment logic on Sei ⚡
