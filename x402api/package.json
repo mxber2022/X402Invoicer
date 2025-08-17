@@ -9,7 +9,13 @@
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["x402", "sei", "blockchain", "payments", "invoices"],
+  "keywords": [
+    "x402",
+    "sei",
+    "blockchain",
+    "payments",
+    "invoices"
+  ],
   "author": "",
   "license": "MIT",
   "description": "X402Invoicer API - HTTP-Native Invoice Payments on Sei",
@@ -22,6 +28,7 @@
     "ts-node": "^10.9.2"
   },
   "devDependencies": {
+    "@types/express": "^5.0.3",
     "nodemon": "^3.0.1",
     "tsx": "^4.20.4",
     "typescript": "^5.0.0"
