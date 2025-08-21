@@ -2,10 +2,10 @@
   "name": "x402api",
   "version": "1.0.0",
   "type": "module",
-  "main": "server.ts",
+  "main": "src/server.ts",
   "scripts": {
-    "start": "tsx server.ts",
-    "dev": "nodemon --exec tsx server.ts",
+    "start": "tsx src/server.ts",
+    "dev": "nodemon --exec tsx src/server.ts",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

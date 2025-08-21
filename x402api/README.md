@@ -90,7 +90,7 @@ curl http://localhost:4021/invoice/INV-1755400885490-x0cmtckhs
 
 ### 4. Pay Invoice (x402 Payment Required)
 ```bash
-curl "http://localhost:4021/pay?invoiceId=INV-1755401384879-7yuatofbv"
+curl "http://localhost:4021/pay?invoiceId=INV-1755402755740-7ckbxs3k0"
 ```
 
 ### 5. Mark Invoice as Paid with Transaction Hash

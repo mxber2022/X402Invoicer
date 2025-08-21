@@ -1,0 +1,22 @@
+{
+  "name": "x402mcp",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.3",
+    "@sei-js/x402": "^0.4.1",
+    "axios": "^1.11.0",
+    "dotenv": "^17.2.1",
+    "viem": "^2.34.0",
+    "x402-axios": "^0.5.1"
+  }
+}
