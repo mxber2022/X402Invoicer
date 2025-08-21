@@ -51,7 +51,9 @@ The server uses the following configuration:
 
 ## Available Tools
 
-### 1. pay-invoice
+### Payment Tools
+
+#### 1. pay-invoice
 Processes invoice payments using the X402 protocol.
 
 **Parameters:**
@@ -62,18 +64,67 @@ Processes invoice payments using the X402 protocol.
 Pay invoice: INV-1755771261908-nucuf7k9g
 ```
 
-### 2. get-data-from-resource-server
+#### 2. get-data-from-resource-server
 Fetches data from the configured resource server endpoint.
 
 **Parameters:**
-- None (uses default endpoint)
+- `invoiceId` (string, optional): Invoice ID for payment processing
 
 **Example Usage:**
 ```
-Get weather data from server
+Get data from payment server
 ```
 
-### 3. add
+### Invoice Management Tools
+
+#### 3. create-invoice
+Creates a new invoice with specified amount and description.
+
+**Parameters:**
+- `amount` (string): Invoice amount (e.g., '$10.50')
+- `description` (string): Description of the invoice
+
+**Example Usage:**
+```
+Create invoice for $25.00 for web development services
+```
+
+#### 4. get-invoice-status
+Retrieves the status and details of a specific invoice.
+
+**Parameters:**
+- `invoiceId` (string): The invoice ID to check status for
+
+**Example Usage:**
+```
+Get status of invoice INV-1755771261908-nucuf7k9g
+```
+
+#### 5. list-invoices
+Retrieves a list of all invoices in the system.
+
+**Parameters:**
+- None
+
+**Example Usage:**
+```
+List all invoices
+```
+
+#### 6. get-invoice-summary
+Gets a summary of invoice statistics (pending, paid, total counts).
+
+**Parameters:**
+- None
+
+**Example Usage:**
+```
+Get invoice summary statistics
+```
+
+### Utility Tools
+
+#### 7. add
 Performs addition of two numbers.
 
 **Parameters:**
@@ -159,6 +210,7 @@ X402MCP/
 │   │   └── index.js           # Configuration management
 │   ├── tools/
 │   │   ├── paymentTools.js    # Payment-related tools
+│   │   ├── invoiceTools.js    # Invoice management tools
 │   │   └── utilityTools.js    # Utility tools (add, etc.)
 │   ├── types/
 │   │   └── index.js           # Type definitions

@@ -32,7 +32,28 @@
  * @property {string} id - Invoice ID
  * @property {string} amount - Invoice amount
  * @property {string} description - Invoice description
- * @property {string} status - Invoice status
- * @property {string} createdAt - Creation timestamp
- * @property {string} paidAt - Payment timestamp
+ * @property {string} status - Invoice status (pending, paid, expired, cancelled)
+ * @property {Date} createdAt - Creation timestamp
+ * @property {Date} [paidAt] - Payment timestamp
+ * @property {string} [paymentTxHash] - Payment transaction hash
+ * @property {string} [paymentAmount] - Actual payment amount
+ */
+
+/**
+ * @typedef {Object} InvoiceCreationRequest
+ * @property {string} amount - Invoice amount (e.g., '$10.50')
+ * @property {string} description - Invoice description
+ */
+
+/**
+ * @typedef {Object} InvoiceCreationResponse
+ * @property {Invoice} invoice - Created invoice
+ * @property {string} paymentUrl - Payment URL for the invoice
+ */
+
+/**
+ * @typedef {Object} InvoiceSummary
+ * @property {number} pending - Number of pending invoices
+ * @property {number} paid - Number of paid invoices
+ * @property {number} total - Total number of invoices
  */
