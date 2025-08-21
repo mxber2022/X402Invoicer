@@ -89,7 +89,9 @@ Add 5 + 3
 
 1. Start the MCP server:
 ```bash
-node server.js
+npm start
+# or
+node src/server.js
 ```
 
 2. The server will connect via stdio transport and be ready to receive MCP requests.
@@ -101,7 +103,7 @@ node server.js
   "mcpServers": {
     "x402-payment": {
       "command": "node",
-      "args": ["path/to/X402MCP/server.js"],
+      "args": ["path/to/X402MCP/src/server.js"],
       "env": {
         "PRIVATE_KEY": "your_private_key_here"
       }
@@ -152,11 +154,24 @@ All errors are logged with detailed messages and the server exits gracefully on 
 ### Project Structure
 ```
 X402MCP/
-├── server.js          # Main MCP server implementation
-├── package.json       # Node.js dependencies
-├── package-lock.json  # Dependency lock file
-├── .env              # Environment variables (create this)
-└── README.md         # This file
+├── src/
+│   ├── config/
+│   │   └── index.js           # Configuration management
+│   ├── tools/
+│   │   ├── paymentTools.js    # Payment-related tools
+│   │   └── utilityTools.js    # Utility tools (add, etc.)
+│   ├── types/
+│   │   └── index.js           # Type definitions
+│   ├── utils/
+│   │   ├── client.js          # Payment client setup
+│   │   └── toolRegistry.js    # Tool registration utilities
+│   ├── index.js               # Main exports
+│   └── server.js              # Main MCP server implementation
+├── package.json               # Node.js dependencies
+├── package-lock.json          # Dependency lock file
+├── .env                       # Environment variables (create this)
+├── .gitignore                 # Git ignore rules
+└── README.md                  # This file
 ```
 
 ### Adding New Tools
