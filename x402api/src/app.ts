@@ -35,7 +35,7 @@ app.use((req, res, next) => {
           {
             "GET /pay": {
               price: invoice.amount,
-              network: "base-sepolia",
+              network: "sei",
             }
           },
           {

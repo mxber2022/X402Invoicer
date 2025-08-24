@@ -7,7 +7,7 @@ export const configurePaymentMiddleware = (payTo: `0x${string}`, facilitatorUrl:
       "GET /pay": {
         // USDC amount in dollars - will be set dynamically per invoice
         price: price,
-        network: "base-sepolia",
+        network: "sei",
       }
     },
     {
