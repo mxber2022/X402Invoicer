@@ -1,5 +1,5 @@
 {
-  "name": "x402api",
+  "name": "facilator",
   "version": "1.0.0",
   "type": "module",
   "main": "src/server.ts",

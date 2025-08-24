@@ -40,6 +40,10 @@ app.use((req, res, next) => {
             "GET /pay": {
               price: invoice.amount,
               network: network,
+              config: {
+                description: "Premium API access",
+                maxTimeoutSeconds: 120,
+              }
             }
           },
           {
