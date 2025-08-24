@@ -15,7 +15,7 @@ export const serverConfig = {
 
 export const paymentConfig = {
   privateKey: process.env.PRIVATE_KEY,
-  baseURL: process.env.BASE_URL || "http://localhost:4021",
+  baseURL: process.env.BASE_URL || "http://localhost:4000",
   endpointPath: process.env.ENDPOINT_PATH || "/pay",
 };
 

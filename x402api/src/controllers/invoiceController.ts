@@ -14,7 +14,7 @@ export class InvoiceController {
     
     res.json({
       invoice,
-      paymentUrl: `http://localhost:4021/pay?invoiceId=${invoice.id}`
+      paymentUrl: `http://localhost:4000/pay?invoiceId=${invoice.id}`
     });
   }
 
