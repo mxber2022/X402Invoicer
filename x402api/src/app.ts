@@ -4,17 +4,21 @@ import { paymentMiddleware, Resource } from "@sei-js/x402-express";
 import invoiceRoutes from './routes/invoiceRoutes';
 import { InvoiceController } from './controllers/invoiceController';
 import { InvoiceModel } from './models/invoiceModel';
+// import { facilitator } from "@sei-js/x402";
 
 config();
 
 const facilitatorUrl = process.env.FACILITATOR_URL as string;
 const payTo = process.env.ADDRESS as `0x${string}`;
 const price = process.env.PAYMENT_PRICE || "$0.001";
+const network = process.env.NETWORK as "sei" | "base-sepolia" | "base" | "avalanche-fuji" | "avalanche" | "iotex" | "sei-testnet";
 
-if (!facilitatorUrl || !payTo) {
-  console.error("Missing required environment variables");
+if (!facilitatorUrl || !payTo || !network) {
+  console.error("Missing required environment variables: FACILITATOR_URL, ADDRESS, or NETWORK");
   process.exit(1);
 }
+
+console.log(`Network configured: ${network}`);
 
 const app = express();
 
@@ -35,7 +39,7 @@ app.use((req, res, next) => {
           {
             "GET /pay": {
               price: invoice.amount,
-              network: "sei",
+              network: network,
             }
           },
           {

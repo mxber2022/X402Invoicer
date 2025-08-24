@@ -218,7 +218,7 @@
     viem "^2.23.1"
     zod "^3.24.2"
 
-"@sei-js/x402@workspace:^":
+"@sei-js/x402@^0.4.1", "@sei-js/x402@workspace:^":
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/@sei-js/x402/-/x402-0.4.1.tgz#72eb86bd3d30b85fad99139d44f1071b46b968b6"
   integrity sha512-RitYrSPmIbtJ+uleluk6/uJBf1OLIriEAexGZhkrtZBW2SEnLay5tBZJ5UAQdfolV8yterJ7rixUxHmHxWi4GA==

@@ -20,6 +20,7 @@
   "license": "MIT",
   "description": "X402Invoicer API - HTTP-Native Invoice Payments on Sei",
   "dependencies": {
+    "@sei-js/x402": "^0.4.1",
     "@sei-js/x402-express": "^0.3.6",
     "@types/form-data": "^2.5.2",
     "@types/node": "^24.3.0",
